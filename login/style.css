@@ -1,0 +1,152 @@
+@charset "utf-8";
+p,ol {
+	font-family: "華康采風體W3","微軟正黑體","標楷體";
+	font-size: 10pt;
+	line-height: 150%;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+form {
+	margin: 0px;
+}
+a {
+	text-decoration: none;
+	font-family: "華康采風體W3","微軟正黑體","標楷體";
+	font-size:20px;
+	color: rgb(0, 247, 255);
+}
+p{
+	font-family: "微軟正黑體","標楷體";
+	color:white;
+	background-color: black;
+}
+a:link {
+	color: rgb(0, 247, 255);
+}
+a:visited {
+	color: rgb(0, 247, 255);
+}
+a:hover {
+	color: #FF0000;
+}
+.dataDiv {
+	margin: 10px;
+}
+
+.title {
+	font-family: "華康采風體W3","微軟正黑體","標楷體";
+	font-size: 24pt;
+	font-weight: bolder;
+	color: rgb(226, 204, 9);
+}
+.heading {
+	font-family: "微軟正黑體","標楷體";
+	font-size: 18pt;
+	color: rgb(0, 247, 255);
+	line-height: 150%;
+	font-weight: bold;
+}
+.smalltext {
+	font-size: 11px;
+	color: rgb(65, 228, 73);
+	font-family: "微軟正黑體","標楷體";
+	vertical-align: middle;
+}
+.trademark {
+	font-family: "標楷體";
+	font-size: 8pt;
+	color: rgb(25, 218, 41);
+}
+.regbox {
+	border: 1px solid rgb(101, 101, 101);
+	padding: 15px;
+	background-color: rgb(0, 0, 0);
+}
+.boxtl {
+	background-image: url(images/tl.gif);
+	float: left;
+	top: -1px;
+	height: 4px;
+	width: 4px;
+	background-repeat: no-repeat;
+}
+.boxtr {
+	background-image: url(images/tr.gif);
+	float: right;
+	top: -1px;
+	height: 4px;
+	width: 4px;
+	background-repeat: no-repeat;
+}
+.boxbl {
+	background-image: url(images/bl.gif);
+	float: left;
+	top: -1px;
+	height: 4px;
+	width: 4px;
+	background-repeat: no-repeat;
+	margin-top: -4px;
+}
+.boxbr {
+	background-image: url(images/br.gif);
+	float: right;
+	top: -1px;
+	height: 4px;
+	width: 4px;
+	background-repeat: no-repeat;
+	margin-top: -4px;
+}
+.tdrline {
+	border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: rgb(153, 153, 153);
+	background-color: black;
+}
+.tdbline {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: rgb(153, 153, 153);
+	background-color: black;
+}
+
+li {
+	font-family: "華康采風體W3","微軟正黑體","標楷體";
+	font-size:20px;
+	color:white;
+
+}
+.clear {
+	clear: both;
+}
+.logintextbox {
+	width: 150px;
+}
+.errDiv {
+	font-family: "微軟正黑體","標楷體";
+	font-size: 14pt;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0);
+	padding: 4px;
+	text-align: center;
+}
+
+#top{
+	background-color: white;
+}
+
+body{
+	background-color: black;
+}
+
+strong{
+	font-size:13pt;
+}
+
+.information{
+	font-size:13pt;
+	color: rgb(0, 255, 0);
+}
+
+#button{
+	font-family: "微軟正黑體","標楷體"
+}
