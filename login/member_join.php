@@ -3,91 +3,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>註冊會員</title>
 <link href="style.css" rel="stylesheet" type="text/css">
-<script>
-function checkForm(){
-	if(document.formJoin.m_username.value==""){		
-		alert("請填寫帳號!");
-		document.formJoin.m_username.focus();
-		return false;
-	}else{
-		uid=document.formJoin.m_username.value;
-		if(uid.length<6 || uid.length>12){
-			alert( "您的帳號長度只能6至12個字元!" );
-			document.formJoin.m_username.focus();
-			return false;
-		}
-		for(idx=0;idx<uid.length;idx++){
-			if(!(( uid.charAt(idx)>='a'&&uid.charAt(idx)<='z')||(uid.charAt(idx)>='0'&& uid.charAt(idx)<='9')||( uid.charAt(idx)=='_')||( uid.charAt(idx)>='A'&&uid.charAt(idx)<='Z'))){
-				alert( "您的帳號只能是數字,英文字母及「_」等符號,其他的符號都不能使用!" );
-				document.formJoin.m_username.focus();
-				return false;
-			}
-			if(uid.charAt(idx)=='_'&&uid.charAt(idx-1)=='_'){
-				alert( "「_」符號不可相連 !\n" );
-				document.formJoin.m_username.focus();
-				return false;				
-			}
-		}
-	}
-	if(!check_passwd(document.formJoin.m_passwd.value,document.formJoin.m_passwdrecheck.value)){
-		document.formJoin.m_passwd.focus();
-		return false;
-	}	
-	if(document.formJoin.m_name.value==""){
-		alert("請填寫姓名!");
-		document.formJoin.m_name.focus();
-		return false;
-	}
-	if(document.formJoin.m_birthday.value==""){
-		alert("請填寫生日!");
-		document.formJoin.m_birthday.focus();
-		return false;
-	}
-	if(document.formJoin.m_email.value==""){
-		alert("請填寫電子郵件!");
-		document.formJoin.m_email.focus();
-		return false;
-	}
-	if(!checkmail(document.formJoin.m_email)){
-		document.formJoin.m_email.focus();
-		return false;
-	}
-	return confirm('確定送出嗎？');
-}
-function check_passwd(pw1,pw2){
-	if(pw1==''){
-		alert("密碼不可以空白!");
-		return false;
-	}
-	for(var idx=0;idx<pw1.length;idx++){
-		if(pw1.charAt(idx) == ' ' || pw1.charAt(idx) == '\"'){
-			alert("密碼不可以含有空白或雙引號 !\n");
-			return false;
-		}
-		if(pw1.length<8 || pw1.length>12){
-			alert( "密碼長度只能8到12個字母 !\n" );
-			return false;
-		}
-		if(pw1!= pw2){
-			alert("密碼二次輸入不一樣,請重新輸入 !\n");
-			return false;
-		}
-	}
-	return true;
-}
-function checkmail(MyEmail) {
-	var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	if(filter.test(MyEmail.value)){
-		return true;
-	}
-	alert("電子郵件格式不正確");
-	return false;
-}
-</script>
 </head>
-
 <body>
-<?php if(isset($_GET["loginStats"]) && ($_GET["loginStats"]=="1"))?>
 <table width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
   <tr>
     <td class="tdbline" id="top"><img src="images/mlogo.jpg" alt="會員" width="100" height="100"></td>
@@ -97,9 +14,6 @@ function checkmail(MyEmail) {
       <tr valign="top">
         <td class="tdrline"><form action="" method="POST" name="formJoin" id="formJoin" onSubmit="return checkForm();">
           <p class="title">加入會員</p>
-		  <?php if(isset($_GET["errMsg"]) && ($_GET["errMsg"]=="1")){?>
-          <div class="errDiv">帳號 <?php echo $_GET["username"];?> 已經有人使用！</div>
-          <?php }?>
           <div class="dataDiv">
             <hr size="1" />
             <p class="heading" align="center">帳號資料</p>
@@ -194,31 +108,3 @@ function checkmail(MyEmail) {
 </table>
 </body>
 </html>
-
-<?php 
-header("Content-Type: text/html; charset=utf-8");
-require_once("connMysql.php");
-if(isset($_POST["action"])&&($_POST["action"]=="join")){
-	//找尋帳號是否已經註冊
-	$query_RecFindUser = "SELECT `m_username` FROM `memberdata` WHERE `m_username`='".$_POST["m_username"]."'";
-	$RecFindUser=mysql_query($query_RecFindUser);
-	if (mysql_num_rows($RecFindUser)>0){
-		header("Location: member_join.php?errMsg=1&username=".$_POST["m_username"]);
-	}else{
-	//若沒有執行新增的動作	
-		$query_insert = "INSERT INTO `memberdata` (`m_name` ,`m_username` ,`m_passwd` ,`m_sex` ,`m_birthday` ,`m_email`,`m_url`,`m_phone`,`m_address`,`m_jointime`) VALUES (";
-		$query_insert .= "'".$_POST["m_name"]."',";
-		$query_insert .= "'".$_POST["m_username"]."',";
-		$query_insert .= "'".md5($_POST["m_passwd"])."',";
-		$query_insert .= "'".$_POST["m_sex"]."',";
-		$query_insert .= "'".$_POST["m_birthday"]."',";
-		$query_insert .= "'".$_POST["m_email"]."',";
-		$query_insert .= "'".$_POST["m_url"]."',";	
-		$query_insert .= "'".$_POST["m_phone"]."',";
-		$query_insert .= "'".$_POST["m_address"]."',";	
-		$query_insert .= "NOW())";
-		mysql_query($query_insert);
-		header("Location: member_join.php?loginStats=1");
-	}
-}
-?>
