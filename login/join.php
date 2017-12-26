@@ -7,7 +7,7 @@
 <body>
 <table width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
   <tr>
-    <td class="tdbline" id="top"><img src="images/mlogo.jpg" alt="會員" width="100" height="100"></td>
+    <td class="tdbline" id="top"><center><img src="images/logo.jpg" alt="會員" width="100" height="100"></td></center>
   </tr>
   <tr>
     <td class="tdbline"><table width="100%" border="0" cellspacing="0" cellpadding="10">

@@ -32,12 +32,25 @@ a:hover {
 .dataDiv {
 	margin: 10px;
 }
-
+img{
+	display: block;
+	margin: 0 auto;
+	left:40%;
+}
+#lft{
+	float:left;
+	font-size: 10pt;
+}
+#rgt{
+	float: right;
+	font-size: 10pt;
+}
 .title {
 	font-family: "華康采風體W3","微軟正黑體","標楷體";
 	font-size: 24pt;
 	font-weight: bolder;
-	color: rgb(226, 204, 9);
+	text-align: center;
+	color: rgb(245, 248, 37);
 }
 .heading {
 	font-family: "微軟正黑體","標楷體";
@@ -59,43 +72,10 @@ a:hover {
 }
 .regbox {
 	border: 1px solid rgb(101, 101, 101);
-	padding: 15px;
+	padding: 20px;
 	background-color: rgb(0, 0, 0);
 }
-.boxtl {
-	background-image: url(images/tl.gif);
-	float: left;
-	top: -1px;
-	height: 4px;
-	width: 4px;
-	background-repeat: no-repeat;
-}
-.boxtr {
-	background-image: url(images/tr.gif);
-	float: right;
-	top: -1px;
-	height: 4px;
-	width: 4px;
-	background-repeat: no-repeat;
-}
-.boxbl {
-	background-image: url(images/bl.gif);
-	float: left;
-	top: -1px;
-	height: 4px;
-	width: 4px;
-	background-repeat: no-repeat;
-	margin-top: -4px;
-}
-.boxbr {
-	background-image: url(images/br.gif);
-	float: right;
-	top: -1px;
-	height: 4px;
-	width: 4px;
-	background-repeat: no-repeat;
-	margin-top: -4px;
-}
+
 .tdrline {
 	border-right-width: 1px;
 	border-right-style: dotted;
@@ -149,4 +129,9 @@ strong{
 
 #button{
 	font-family: "微軟正黑體","標楷體"
+}
+
+.onlai{
+	font-size: 13pt;
+	color:yellow;
 }
