@@ -18,36 +18,36 @@
             <hr size="1" />
             <p class="heading" align="center">帳號資料</p>
             <p><strong>帳號</strong>：
-                <input name="m_username" type="text" class="normalinput" id="m_username">
+                <input name="username" type="text" class="normalinput" id="username">
                 <font color="#FF0000">*</font><br>
                 <span class="smalltext">請填入6~12個字元以內的大小寫英文字母、數字、以及_ 符號。</span></p><br />
             <p><strong>密碼</strong>：
-                <input name="m_passwd" type="password" class="normalinput" id="m_passwd">
+                <input name="passwd" type="password" class="normalinput" id="passwd">
                 <font color="#FF0000">*</font><br>
                 <span class="smalltext">請填入8~12個字元以內的英文字母、數字、以及各種符號組合，</span></p><br />
             <p><strong>確認密碼</strong>：
-                <input name="m_passwdrecheck" type="password" class="normalinput" id="m_passwdrecheck">
+                <input name="passwdchk" type="password" class="normalinput" id="m_passwdrecheck">
                 <font color="#FF0000">*</font> <br>
                 <span class="smalltext">再輸入一次密碼</span></p>
             <hr size="1" />
             <p class="heading" align="center">個人資料</p><br />
             <p><strong>真實姓名</strong>：
-                <input name="m_name" type="text" class="normalinput" id="m_name">
+                <input name="Name" type="text" class="normalinput" id="m_name">
                 <font color="#FF0000">*</font> </p><br />
             <p><strong>性　　別
               </strong>：
-              <input name="m_sex" type="radio" value="男" checked>男
-  						<input name="m_sex" type="radio" value="女">女 <font color="#FF0000">*</font></p><br />
+              <input name="Sex" type="radio" value="boy" checked>男
+  						<input name="Sex" type="radio" value="girl">女 <font color="#FF0000">*</font></p><br />
             <p><strong>生　　日</strong>：
-                <input name="m_birthday" type="date" class="normalinput" id="m_birthday">
+                <input name="Birthday" type="date" class="normalinput" id="m_birthday">
                 <font color="#FF0000">*</font> <br>
                 <span class="smalltext">為西元格式(YYYY/MM/DD)。</span></p><br />
             <p><strong>電子郵件</strong>：
-                <input name="m_email" type="text" class="normalinput" id="m_email">
+                <input name="Email" type="text" class="normalinput" id="m_email">
                 <font color="#FF0000">*</font> </p>
 						<p class="smalltext">請確定此電子郵件為可使用狀態，以方便未來系統使用，如補寄會員密碼信。</p><br />
 						<p><strong>住　　址</strong>：
-                <select name="m_city">
+                <select name="city">
 									<option value="choose">--請選擇--</option>
 									<option value="Keelung">基隆市</option>
 									<option value="Taipei">臺北市</option>
@@ -108,3 +108,23 @@
 </table>
 </body>
 </html>
+
+<?php session_start;?>
+<?php
+  include("connMysql.php");
+  extract($_POST);
+  $id = $username;
+  $pw = $passwd;
+  $pw2= $passwdchk;
+  $name = $Name;
+  $birthday = $birthday;
+  $email = $Email;
+  $loc = $city + $location;
+  if($city == "choose") echo '請選擇城市';
+  if($id != NULL && $pw != NULL && $pw==$pw2){
+    $sql= "INSERT INTO member_table(username,password,name,birthday,email,loc) values('$id','$pw','$name','$birthday','$email','$loc')";
+    if(mysql_query($sql)) echo '新增成功！';
+    else echo '新增失敗！';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+  }
+?>

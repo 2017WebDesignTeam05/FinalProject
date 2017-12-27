@@ -38,13 +38,13 @@
         <td width="200">
         <div class="regbox">
           <p class="heading">登入會員系統</p>
-          <form name="form1" method="post" action="">
+          <form name="form1" method="post" action="access.php">
             <p>帳號：
               <br>
-              <input name="username" type="text" class="logintextbox" id="username" value="">
+              <input name="username" type="text" class="logintextbox" id="ID">
             </p>
             <p>密碼：<br>
-              <input name="passwd" type="password" class="logintextbox" id="passwd" value="">
+              <input name="passwd" type="password" class="logintextbox" id="PW">
             </p>
             <p><center>
               <input type="submit" name="button" id="button" value="登入">
