@@ -34,8 +34,7 @@ a:hover {
 }
 img{
 	display: block;
-	margin: 0 auto;
-	left:40%;
+	margin-left: 40%;
 }
 #lft{
 	float:left;
@@ -110,10 +109,6 @@ li {
 	text-align: center;
 }
 
-#top{
-	background-color: white;
-}
-
 body{
 	background-color: black;
 }
@@ -134,4 +129,8 @@ strong{
 .onlai{
 	font-size: 13pt;
 	color:yellow;
+}
+
+.logintextbox :hover{
+	color: rgb(0, 247, 255);
 }
