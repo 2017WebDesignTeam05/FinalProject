@@ -45,7 +45,7 @@ include 'dbConfig.php';
             </div>
         </div>
         <?php } }else{ ?>
-        <p>Product(s) not found.....</p>
+        <p>Order(s) not found.....</p>
         <?php } ?>
     </div>
 </div>
