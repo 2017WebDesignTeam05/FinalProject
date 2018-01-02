@@ -24,29 +24,35 @@ include 'dbConfig.php';
         <?php
         //get rows query
         $query = $db->query("SELECT * FROM orders ORDER BY id DESC LIMIT 10");
-        if($query->num_rows > 0){ 
-            while($row = $query->fetch_assoc()){
-        ?>
-        <div class="item col-lg-4">
-            <div class="thumbnail">
-                <div class="caption">
-                    <h4 class="list-group-item-heading"> 訂單編號: <?php echo $row["id"]; ?></h4>
-                    <p class="list-group-item-text">顧客編號: <?php echo $row["customer_id"]; ?></p>
-                    <p class="list-group-item-text">下單日期: <?php echo $row["created"]; ?></p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="lead">總金額: <?php echo '$  '.$row["total_price"]; ?></p>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="btn btn-danger" href="edit.php" > 編輯</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php } }else{ ?>
-        <p>Order(s) not found.....</p>
-        <?php } ?>
+        if($query->num_rows > 0)
+        { 
+            while($row = $query->fetch_assoc())
+           {
+	        ?>
+	        <div class="item col-lg-4">
+	            <div class="thumbnail">
+	                <div class="caption">
+	                    <h4 class="list-group-item-heading"> 訂單編號: <?php echo $row["id"]; ?></h4>
+	                    <p class="list-group-item-text">顧客編號: <?php echo $row["customer_id"]; ?></p>
+	                    <p class="list-group-item-text">下單日期: <?php echo $row["created"]; ?></p>
+	                    <div class="row">
+	                        <div class="col-md-6">
+	                            <p class="lead">總金額: <?php echo '$  '.$row["total_price"]; ?></p>
+	                        </div>
+	                        <div class="col-md-6">
+	                            <a class="btn btn-warning" href="AdminAction.php?action=editOrder&id=<?php echo  $row["id"]; ?>" action=>edit</a>
+	                            <a class="btn btn-danger"  onclick="return confirm('Are you sure?')" href="AdminAction.php?action=removeOrdertItem&id=<?php echo  $row["id"]; ?>" action=> Delete</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <?php 
+	    	} 
+	    }else{    ?>
+		        <p>Order(s) not found.....</p>
+		        <?php 
+		     } ?>
     </div>
 </div>
 </body>
