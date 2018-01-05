@@ -1,12 +1,12 @@
 <?php
-// initializ shopping cart class
+include 'dbConfig.php';
 //include 'Cart.php';
 //$cart = new Cart;
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>View Cart</title>
+    <title>Orders details</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -19,47 +19,69 @@
 </head>
 <body>
 <div class="container">
-    <?php $OrderID=$_GET['id']; 
+    <?php 
+    $OrderID=$_GET['id']; 
+    $query = $db->query("SELECT products.name,products.id , order_items.quantity , products.price
+                         FROM order_items
+                         INNER JOIN products
+                         WHERE order_items.product_id=products.id AND order_items.order_id=" .$OrderID);
 
     ?>
 
-    <h1>Order #<?php echo  $OrderID; ?></h1>
+    <h1>Order #<?php echo  $OrderID; ?>  Details</h1>
     <form method="post" action="checkout.php">
     <table class="table">
     <thead>
         <tr>
             <th>Product</th>
             <th>Price</th>
-            <th>Quantity</th>         
+            <th>Quantity</th> 
             <th>Subtotal</th>
-            <th>&nbsp;</th>
         </tr>
     </thead>
+    
     <tbody>
-
+         <?php   
+             while($IT = $query->fetch_assoc()){
+        ?>
         <tr>
-            <td></td>
-            <td></td>
-            <td><input type="number" name="qty"></td>
-            <td></td>
-            <td>
-                <a href="AdminAction.php?action=removeItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a>
-            </td>
+            <td> <?php echo $IT['name']; ?></td>
+            <td><?php echo $IT['price']; ?></td>
+            <td><?php echo $IT['quantity']; ?></td>
+            <td><?php echo $IT['price']*$IT['quantity']; ?></td>
+
 
         </tr>
+       <?php }?>
 
     </tbody>
     <tfoot>
         <tr>
-            <td><a href="Adminview.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Order List</a></td>
-            <td colspan="2"></td>
-            <?php { ?>
-            <td class="text-center"><strong>Total</strong></td>
-            <td><a href="Adminview.php"  class="btn btn-success btn-block">Finish <i class="glyphicon glyphicon-menu-right"></i></a></td>
-            <?php } ?>
+
+            <td></td>
+            <td></td>
+            <td><a href="Adminview.php" class="btn btn-warning"> Order List</a></td>
+            <td colspan="1"></td>
+
         </tr>
     </tfoot>
     </table>
+    <div class="shipAddr">
+        <h4><B>Customer's Information</B></h4>
+    <?php     
+    $CS = $db->query("SELECT customers.name,customers.email , customers.address , customers.phone
+                          FROM orders
+                          INNER JOIN customers
+                          WHERE orders.customer_id=customers.id AND orders.id=" .$OrderID);
+    while($custRow = $CS->fetch_assoc()){
+    ?>
+        <p><B>Name:</B> <?php echo $custRow['name']; ?></p>
+        <p><B>Mail: </B><?php echo $custRow['email']; ?></p>
+        <p><B>Phone: </B><?php echo $custRow['phone']; ?></p>
+        <p><B>Address:</B> <?php echo $custRow['address']; ?></p>
+       <?php }?>        
+    </div> 
+
 </div>
 </body>
 </html>

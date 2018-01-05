@@ -40,7 +40,7 @@ include 'dbConfig.php';
 	                            <p class="lead">總金額: <?php echo '$  '.$row["total_price"]; ?></p>
 	                        </div>
 	                        <div class="col-md-6">
-	                            <a class="btn btn-warning" href="AdminAction.php?action=editOrder&id=<?php echo  $row["id"]; ?>" action=>edit</a>
+	                            <a class="btn btn-warning" href="AdminAction.php?action=editOrder&id=<?php echo  $row["id"]; ?>" action=>detail</a>
 	                            <a class="btn btn-danger"  onclick="return confirm('Are you sure?')" href="AdminAction.php?action=removeOrdertItem&id=<?php echo  $row["id"]; ?>" action=> Delete</a>
 	                        </div>
 	                    </div>
