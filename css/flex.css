@@ -1,0 +1,93 @@
+.flex
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-around;
+	align-items:center;
+	align-content:center;
+	flex-wrap:wrap;
+}
+
+.flex_forum
+{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	padding-left:9vw;
+	padding-right:9vw;
+	flex:1;
+}
+
+.flex_box
+{
+	display:flex;
+	padding:1vw;
+	flex-direction:column;
+	background-color:#e6e6ff;
+	margin-top:3vh;
+	margin-bottom:3vh;
+	border-radius: 1vw;
+	width:80vw;
+}
+
+.forum_name
+{
+	padding-left:1vw;
+	padding-bottom:1vh;
+}
+
+.forum_content
+{
+	border:solid #f7f7ff;
+	padding-left:1vw;
+	padding-right:1vw;
+	border-radius: 1vw;
+	background-color:#f7f7ff;
+}
+
+.forum_form
+{
+	margin-bottom:5vh;
+}
+
+.flex_ticket
+{
+	display:flex;
+	padding:1vw;
+	flex-direction:row;
+	align-items:center;
+	background-color:#e6e6ff;
+	margin-top:3vh;
+	margin-bottom:3vh;
+	width:80vw;
+}
+
+.ticket_box
+{
+	display:flex;
+	padding:1vw;
+	flex-direction:column;
+	align-content:center;
+	background-color:#e6e6ff;
+	margin-top:3vh;
+	margin-bottom:3vh;
+	width:80vw;
+}
+
+.ticket_layout
+{
+	padding-left:1vw;
+	padding-right:1vh;
+}
+
+.ticketToCartIcon
+{
+	display:flex;
+	width:70vw;
+	justify-content:flex-end;
+}
+
+.shoppingcarticon
+{
+	font-size:2vw;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>Tickets</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+			<link rel="stylesheet" href="css/style.css">
+			<link rel="stylesheet" href="css/flex.css">
+			<link rel="stylesheet" href="css/set1.css">
+			<script src="script/popupmodal.js"></script>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="index.html" class="navbar-brand">
+						<i class="fa fa-ticket" aria-hidden="true"></i>
+						<span>鳳梨購票</span>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="navbar-nav nav navbar-left">
+						<li class="nav-item">
+							<a class="nav-link" href="ticketInfo.html">
+								Info
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="time.html">
+								Time
+							</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a id="signuper" href="#"><span class="glyphicon glyphicon-user navrighticon"></span>Sign Up</a></li>
+						<li><a id="loginer" href="#"><span class="glyphicon glyphicon-log-in navrighticon"></span>Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div>			
+			<div id="dialog" title="Login">
+				<form action="src/login.php" method="post" name="LoginForm">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" name="name" id="name11" class="form-control" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" id="pass11" name="password" class="form-control" placeholder="Passowrd">
+					</div>
+					
+					<button type="submit" id="submit11" class="btn btn-default">Submit</button>
+					<button type="reset" class="btn btn-default">Clear</button>
+				</form>
+			</div>
+		</div>
+		
+		<div>
+			<div id="dialog2" title="SignUp">
+				<form action="src/signup.php" method="post" name="SignupForm">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="name" name="name" id="name01" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" id="pass01" name="password" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Re-enter password</label>
+						<input type="password" id="pass02" class="form-control" name="p">
+					</div>
+					
+					<button type="submit" id="submit01" class="btn btn-primary btn-block">Create account</button>
+				</form>
+			</div>
+		</div>
+		
+		            <div class="page-ins page">
+            <div class="guide-edit" style="display:flex;justify-content:center;align-items:center;">
+            <div style="width: 60%;">
+        <p style="color: red; width: 100%; text-align: right;">適用期間：106/8/12~106/12/30</p>
+        <table style="border-spacing: 2px; border-collapse: separate; width: 100%; margin-left: auto; margin-right: auto;" width="100%">
+        <tbody>
+        <tr style="color: #fff; text-align: center; background-color: #942283;">
+        <td width="20%">時段</td>
+        <td width="20%">開園時間</td>
+        <td width="20%">前山區營運時間</td>
+        <td width="40%">設施營運時間</td>
+        </tr>
+        <tr style="text-align: center; background-color: #fff3f7;">
+        <td style="color: #6600ff; font-weight: bold;">週一至週五</td>
+        <td rowspan="2">09:00至21:00</td>
+        <td>
+        <p>09:00至18:00</p>
+        </td>
+        <td style="padding: 5px; text-align: center;" rowspan="2">09:30至17:20止</td>
+        </tr>
+        <tr style="text-align: center; background-color: #fff3f7;">
+        <td style="color: #6600ff; font-weight: bold;">週六及週日</td>
+        <td>09:00至18:30</td>
+        </tr>
+        <tr style="color: #fff; text-align: center; background-color: #942283;">
+        <td colspan="4">備註</td>
+        </tr>
+        <tr style="text-align: left;">
+        <td style="border: 1px solid #999; padding: 5px;" colspan="4">
+        <table width="100%">
+        <tbody>
+        <tr>
+        <td align="center" width="5%"><span style="font-size: 14px;">1</span></td>
+        <td width="95%"><span style="font-size: 14px;">前山區09:00開放入園，摩天樂園設施09:30陸續開放，摩天廣場及兒童玩國各項設施17:00陸續停止運轉。</span></td>
+        </tr>
+        <tr>
+        <td align="center" width="5%"><span style="font-size: 14px;">2</span></td>
+        <td width="95%">
+        <p class="MsoNormal"><span style="font-size: 14px;">&nbsp;如遇天氣等不可抗力之因素，本園區將另行公告開<span lang="EN-US">/</span>關園時間</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td align="center" width="5%"><span style="font-size: 14px;">※</span></td>
+        <td width="95%">
+        <p class="MsoNormal"><span style="font-size: 14px; font-family: 微軟正黑體; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">依照行政院觀光遊樂業兒童對象收費標準<span lang="EN-US">,</span>以年齡為初判，身高為複判之雙重認定，<span lang="EN-US">3</span>歲以下 或身高未達<span lang="EN-US">100c</span><span lang="EN-US">m</span>之幼兒<span lang="EN-US">,</span>可免費入園，若身高已達<span lang="EN-US">100c</span><span lang="EN-US">m,</span>但未滿<span lang="EN-US">3</span>歲之幼兒<span lang="EN-US">,</span>需出示健保 卡。為維護<span lang="EN-US">3</span>歲以下幼兒之安全<span lang="EN-US">,</span>照顧者與幼兒之比率為<span lang="EN-US">1:3</span>敬請配合。</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td align="center" width="5%"><span style="font-size: 14px;">※</span></td>
+        <td width="95%">
+        <p class="MsoNormal"><span style="font-size: 14px; font-family: 微軟正黑體; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">依中華民國身心障礙保護法，凡持有身心障礙手冊者，本人享愛心票，隨行之必要陪伴者一人比照享愛心票。</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td align="center" width="5%"><span style="font-size: 14px;">※</span></td>
+        <td width="95%">
+        <p class="MsoNormal"><span style="font-size: 14px; font-family: 微軟正黑體; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">以上票價如有變動，請以現場公告為主。</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td align="center" width="5%"><span style="font-size: 14px;">※</span></td>
+        <td width="95%">
+        <p class="MsoNormal">以上票價為一票玩到底<span lang="EN-US"> (</span>投幣式及另付費設施除外<span lang="EN-US">)</span>。</p>
+        </td>
+        </tr>
+        <tr>
+        <td align="center" width="5%"><span style="font-size: 14px;">※</span></td>
+        <td width="95%">
+        <p class="MsoNormal"><span style="font-size: 14px;"><span lang="EN-US" style="font-family: 微軟正黑體; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">30</span><span style="font-family: 微軟正黑體; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">人以上團體預約另有優待，請洽業務專線<span lang="EN-US">05-5824159</span>、<span lang="EN-US">5824235 FAX</span>：<span lang="EN-US">05-5826363</span></span></span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        
+            </div>
+            </div>
+		
+		<nav class="navbar navbar-inverse navbarmargin" style="margin-top:3vw;">
+			<p class="navbar-text"><i class="fa fa-copyright" aria-hidden="true"></i>2018 WebDesignClass Team05</p>
+		</nav>
+	</body>
+</html>

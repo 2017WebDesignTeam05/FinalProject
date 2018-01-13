@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>Tickets</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+			<link rel="stylesheet" href="css/style.css">
+			<link rel="stylesheet" href="css/flex.css">
+			<link rel="stylesheet" href="css/set1.css">
+			<script src="script/popupmodal.js"></script>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="index.html" class="navbar-brand">
+						<i class="fa fa-ticket" aria-hidden="true"></i>
+						<span>鳳梨購票</span>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="navbar-nav nav navbar-left">
+						<li class="nav-item">
+							<a class="nav-link" href="ticketInfo.html">
+								Info
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="time.html">
+								Time
+							</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a id="signuper" href="#"><span class="glyphicon glyphicon-user navrighticon"></span>Sign Up</a></li>
+						<li><a id="loginer" href="#"><span class="glyphicon glyphicon-log-in navrighticon"></span>Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div>			
+			<div id="dialog" title="Login">
+				<form action="src/login.php" method="post" name="LoginForm">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" name="name" id="name11" class="form-control" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" id="pass11" name="password" class="form-control" placeholder="Passowrd">
+					</div>
+					
+					<button type="submit" id="submit11" class="btn btn-default">Submit</button>
+					<button type="reset" class="btn btn-default">Clear</button>
+				</form>
+			</div>
+		</div>
+		
+		<div>
+			<div id="dialog2" title="SignUp">
+				<form action="src/signup.php" method="post" name="SignupForm">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="name" name="name" id="name01" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" id="pass01" name="password" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Re-enter password</label>
+						<input type="password" id="pass02" class="form-control" name="p">
+					</div>
+					
+					<button type="submit" id="submit01" class="btn btn-primary btn-block">Create account</button>
+				</form>
+			</div>
+		</div>
+		<!--
+		<div class="page" style=" display:flex;justify-content:center; align-items:center;";>
+			<img src="image/ticketInfo.JPG"> 
+		</div>
+		-->
+		<div class="page">
+		<table style="border-spacing: 2px; border-collapse: separate;" width="100%">
+    <tbody>
+    <tr style="color: #fff; text-align: center; background-color: rgba(148, 97, 102, 0.97);">
+    <td width="20%">票　別</td>
+    <td width="20%">個人票價</td>
+    <td width="20%">團體票價 (30人以上)</td>
+    <td width="40%">對　象</td>
+    </tr>
+    <tr style="text-align: center; background-color: #fff3f7;">
+    <td style="color: #6600ff; font-weight: bold;">活動票</td>
+    <td>799元</td>
+    <td>699元</td>
+    <td style="text-align: left; padding: 5px;">※ 一般成人。(原價899元)</td>
+    </tr>
+    <tr style="text-align: center; background-color: #fff3f7;">
+    <td style="color: #6600ff; font-weight: bold;">軍警學生票</td>
+    <td>699元</td>
+    <td>650元</td>
+    <td style="text-align: left; padding: 5px;">※國中(含)以上學生及軍警。</td>
+    </tr>
+    <tr style="text-align: center; background-color: #fff3f7;">
+    <td style="color: #6600ff; font-weight: bold;">學童票</td>
+    <td>599元</td>
+    <td>500元</td>
+    <td style="text-align: left; padding: 5px;">※7-12歲或121cm以上之學童對象。</td>
+    </tr>
+    <tr style="text-align: center; background-color: #fff3f7;">
+    <td style="color: #6600ff; font-weight: bold;">樂齡票</td>
+    <td>399元</td>
+    <td>350元</td>
+    <td style="text-align: left; padding: 5px;">※ 60歲(含)以上長者。<br />※孕婦並持有媽媽手冊。</td>
+    </tr>
+    <tr style="text-align: center; background-color: #fff3f7;">
+    <td style="color: #6600ff; font-weight: bold;">幼童愛心票</td>
+    <td>350元</td>
+    <td>300元</td>
+    <td style="text-align: left; padding: 5px;">※&nbsp;<span style="color: red;">3～6歲</span>或100~120cm以下幼童<br />※ 身障朋友及陪同者一名。<br />(憑手冊或身心障礙證明購票)</td>
+    </tr>
+    <tr style="text-align: center; background-color: #fff3f7; color: #ff0066;">
+    <td style="font-weight: bold;">午後票</td>
+    <td>450元</td>
+    <td>399元</td>
+    <td style="text-align: left; padding: 5px;">※ 13:00以後7-12歲以上對象入園(含成人)。</td>
+    </tr>
+    <tr style="text-align: center; background-color: #fff3f7;">
+    <td style="color: #6600ff; font-weight: bold;">網路商城</td>
+    <td colspan="2">雙人1099元起</td>
+    <td style="text-align: left; padding: 5px;">※&nbsp;<span style="color: #800080; font-size: 16px;"><a href="http://www.fancygoshop.com/" target="_blank"><span style="color: #800080;">快速購票快點我</span></a></span></td>
+    </tr>
+    <tr style="color: #fff; text-align: center; background-color: rgba(148, 97, 102, 0.97);">
+    <td colspan="4">注意事項</td>
+    </tr>
+    <tr style="text-align: left;">
+    <td style="border: 1px solid #999; padding: 5px;" colspan="4">
+    <table width="100%" style="color:#fff">
+    <tbody>
+    <tr>
+    <td align="center" width="5%">※</td>
+    <td width="95%">依照行政院觀光遊樂業兒童對象收費標準,以年齡為初判，身高為複判之雙重認定，3歲以下 或身高未達100cm之幼兒,可免費入園，若身高已達100cm,但未滿3歲之幼兒,需出示健保 卡。為維護3歲以下幼兒之安全,照顧者與幼兒之比率為1:3敬請配合。</td>
+    </tr>
+    <tr>
+    <td align="center" width="5%">※</td>
+    <td width="95%">依中華民國身心障礙保護法，凡持有身心障礙手冊者，本人享愛心票，隨行之必要陪伴者一人比照享愛心票。</td>
+    </tr>
+    <tr>
+    <td align="center" width="5%">※</td>
+    <td width="95%">以上票價如有變動，請以現場公告為主。</td>
+    </tr>
+    <tr>
+    <td align="center" width="5%">※</td>
+    <td width="95%">以上票價為一票玩到底 (投幣式及另付費設施除外)。</td>
+    </tr>
+    <tr>
+    <td align="center" width="5%">※</td>
+    <td width="95%">30人以上團體預約另有優待，請洽業務專線05-5824159、5824235 FAX：05-5826363</td>
+    </tr>
+    </tbody>
+    </table>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+	</div>
+		
+		<nav class="navbar navbar-inverse navbarmargin" style="margin-top:3vw;">
+			<p class="navbar-text"><i class="fa fa-copyright" aria-hidden="true"></i>2018 WebDesignClass Team05</p>
+		</nav>
+	</body>
+</html>
